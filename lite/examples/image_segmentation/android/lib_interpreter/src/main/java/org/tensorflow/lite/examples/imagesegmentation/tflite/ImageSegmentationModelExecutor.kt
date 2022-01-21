@@ -78,7 +78,7 @@ class ImageSegmentationModelExecutor(context: Context, private var useGPU: Boole
       imageSegmentationTime = SystemClock.uptimeMillis()
       interpreter.run(contentArray, segmentationMasks)
       imageSegmentationTime = SystemClock.uptimeMillis() - imageSegmentationTime
-      Log.d(TAG, "Time to run the model $imageSegmentationTime")
+      Log.d(TAG, "Time to run the model $imageSegmentationTime ms")
 
       maskFlatteningTime = SystemClock.uptimeMillis()
       val (maskImageApplied, maskOnly, itemsFound) =

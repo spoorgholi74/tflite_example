@@ -134,7 +134,7 @@ abstract class ImageUtils {
         RectF(
           0f, 0f,
           targetBmp.width.toFloat(),
-          targetBmp.width.toFloat()
+          targetBmp.height.toFloat()
         ),
         RectF(
           0f, 0f,
@@ -143,11 +143,13 @@ abstract class ImageUtils {
         ),
         Matrix.ScaleToFit.FILL
       )
-      return Bitmap.createBitmap(
+      var resizedBitmap = Bitmap.createBitmap(
         targetBmp, 0, 0,
         targetBmp.width,
-        targetBmp.width, matrix, true
+        targetBmp.height, matrix, true
       )
+
+      return resizedBitmap
     }
 
     fun bitmapToByteBuffer(
